@@ -91,35 +91,35 @@ public class App {
     }
 
     // 文件操作演示
-    private static void demoFileOperations() {
-        System.out.println("\n=== 文件操作演示 ===");
-        String filePath = "example.txt";
-        try {
-            // 创建文件
-            File file = new File(filePath);
-            if (file.createNewFile()) {
-                System.out.println("文件创建成功: " + filePath);
-            } else {
-                System.out.println("文件已存在: " + filePath);
-            }
+    // private static void demoFileOperations() {
+    //     System.out.println("\n=== 文件操作演示 ===");
+    //     String filePath = "example.txt";
+    //     try {
+    //         // 创建文件
+    //         File file = new File(filePath);
+    //         if (file.createNewFile()) {
+    //             System.out.println("文件创建成功: " + filePath);
+    //         } else {
+    //             System.out.println("文件已存在: " + filePath);
+    //         }
 
-            // 写入内容
-            FileWriter writer = new FileWriter(file);
-            writer.write("Hello, Java!");
-            writer.close();
+    //         // 写入内容
+    //         FileWriter writer = new FileWriter(file);
+    //         writer.write("Hello, Java!");
+    //         writer.close();
 
-            // 读取内容
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line;
-            System.out.println("文件内容:");
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-            reader.close();
-        } catch (IOException e) {
-            System.out.println("文件操作失败: " + e.getMessage());
-        }
-    }
+    //         // 读取内容
+    //         BufferedReader reader = new BufferedReader(new FileReader(file));
+    //         String line;
+    //         System.out.println("文件内容:");
+    //         while ((line = reader.readLine()) != null) {
+    //             System.out.println(line);
+    //         }
+    //         reader.close();
+    //     } catch (IOException e) {
+    //         System.out.println("文件操作失败: " + e.getMessage());
+    //     }
+    // }
     // 网络操作演示
     private static void demoNetworkOperations() {
         System.out.println("\n=== 网络操作演示 ===");

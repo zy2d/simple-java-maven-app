@@ -1,7 +1,7 @@
 pipeline {
   agent any
   triggers {
-    pollSCM('H/1 * * * *') // 每分钟检查是否有代码更新
+    pollSCM('H/10 * * * *') // 每分钟检查是否有代码更新
   }
   environment {
     MAVEN_OPTS = "-Dmaven.test.failure.ignore=false"
