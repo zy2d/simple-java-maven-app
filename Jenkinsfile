@@ -1,6 +1,8 @@
 pipeline {
   agent any
-
+  triggers {
+    pollSCM('H/1 * * * *') // 每分钟检查是否有代码更新
+  }
   environment {
     MAVEN_OPTS = "-Dmaven.test.failure.ignore=false"
     APP_REPO = "https://github.com/zy2d/simple-java-maven-app"
