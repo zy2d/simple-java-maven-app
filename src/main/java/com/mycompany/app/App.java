@@ -120,4 +120,27 @@ public class App {
             System.out.println("文件操作失败: " + e.getMessage());
         }
     }
+    // 网络操作演示
+    private static void demoNetworkOperations() {
+        System.out.println("\n=== 网络操作演示 ===");
+        try {
+            URL url = new URL("https://www.baidu.com");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+
+            int responseCode = connection.getResponseCode();
+            System.out.println("响应码: " + responseCode);
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String line;
+            System.out.println("网页内容:");
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("网络操作失败: " + e.getMessage());
+        }
+    }
 }
